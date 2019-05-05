@@ -19,6 +19,9 @@ public class Course {
     @ManyToMany(mappedBy = "courses")
     private List<Student> students;
 
+    @ManyToMany(mappedBy = "courses")
+    private List<Teacher> teachers;
+
     public Course() {
     }
 
