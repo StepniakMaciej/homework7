@@ -3,10 +3,11 @@ package com.infoshareacademy.dao;
 import com.infoshareacademy.model.Computer;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-
+@ApplicationScoped
 @Stateless
 public class ComputerDao {
 

@@ -1,17 +1,21 @@
 package com.infoshareacademy.dao;
 
 import com.infoshareacademy.model.Student;
+
 import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+@ApplicationScoped
 @Stateless
 public class StudentDao {
+
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -82,4 +86,7 @@ public class StudentDao {
         return query.getResultList();
     }
 
+    public Student findByName(String name) {
+        return entityManager.find(Student.class, name);
+    }
 }
