@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Path("/")
-public class StudentEndpoint {
+public class StudentAndComputerService {
 
     @Inject
     private StudentDao studentDao;
@@ -50,10 +50,7 @@ public class StudentEndpoint {
     @POST
     @Path("/computers")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response addComputer() {
-        Computer computer = new Computer();
-        computer.setName("name");
-        computer.setOperatingSystem("os");
+    public Response addComputer(Computer computer) {
         computerDao.save(computer);
         List<Computer> allComputer = new ArrayList<>(computerDao.findAll());
 
